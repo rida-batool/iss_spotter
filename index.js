@@ -4,7 +4,7 @@ const { fetchISSFlyOverTimes } = require('./iss');
 
 const { nextISSTimesForMyLocation } = require('./iss');
 
-const nextISSTimesInString = function(passTimes) {
+const printPassTimes = function(passTimes) {
   for (const pass of passTimes) {
     const datetime = new Date(0);
     datetime.setUTCSeconds(pass.risetime); //setter nd getters
@@ -20,7 +20,7 @@ nextISSTimesForMyLocation((error, passTimes) => {
   }
   // success, print out the deets!
   console.log(passTimes);
-  nextISSTimesInString(passTimes);
+  printPassTimes(passTimes);
 });
 
 
